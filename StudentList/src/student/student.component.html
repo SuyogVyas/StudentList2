@@ -1,0 +1,24 @@
+<table  border="1" >
+    <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Rollno</th>
+        <th>Maths</th>
+        <th>English</th>
+        <th>Hindi</th>
+        <th>SocialScience</th>
+        <th>Total Marks</th>
+    </tr>
+    <ng-container *ngFor = "let st of studentlist" >
+    <tr>
+        <td>{{st.name}}</td>
+        <td>{{st.gender}}</td>
+        <td>{{st.Rollno}}</td>
+        <td><span ListDirective [textcolor] = "st.Maths<35?'blue':'black'" >{{st.Maths}}</span></td>
+        <td><span ListDirective [textcolor] = "st.English<35?'blue':'black'" >{{st.English}}</span></td>
+        <td><span ListDirective [textcolor] = "st.Hindi<35?'blue':'black'" >{{st.Hindi}}</span></td>
+        <td><span ListDirective [textcolor] = "st.SS<35?'blue':'black'" >{{st.SS}}</span></td>
+        <td><span [ngStyle] = "st.Maths+st.English+st.Hindi+st.SS<130?{'color': 'red','font-weight':'bold'}:{'color':'green'}" >{{st.Maths+st.English+st.Hindi+st.SS}}</span></td>
+    </tr>
+</ng-container>
+</table>

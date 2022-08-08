@@ -1,0 +1,22 @@
+<table border = "1">
+    <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Rollno</th>
+        <th>English</th>
+        <th>Maths</th>
+        <th>Hindi</th>
+        <th>SS</th>
+        <th>Total Marks</th>
+    </tr>
+    <tr *ngFor = "let t of teachersList">
+        <td tDirective [textcolor] = "'green'">{{t.name | uppercase}}</td>
+        <td>{{t.gender}}</td>
+        <td>{{t.Rollno}}</td>
+        <td>{{t.English}}</td>
+        <td>{{t.Maths}}</td>
+        <td tDirective [textcolor] = "t.Hindi<50?'red':'yellow'">{{t.Hindi}}</td>
+        <td tDirective [textcolor] = "t.SS<50?'red':'blue'">{{t.SS}}</td>
+    <td>{{t.SS+t.English+t.Maths+t.Hindi}}</td>
+    </tr>
+</table>
